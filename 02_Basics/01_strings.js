@@ -7,7 +7,7 @@ console.log(`My name is ${studentName} and roll number is ${rollNumber}.`);
 
 const username = new String('imalex')
 
-console.log(username[2]);
+console.log(username[2]); //a
 console.log(username.length); // 6
 console.log(username.toUpperCase()); // IMALEX
 console.log(username.toLowerCase()); //imalex
