@@ -53,10 +53,11 @@ console.log(newUser.greetings) // [Function (anonymous)] - wrong syntax for func
 // When you log newUser.greetings without parentheses () after the function name, you are not invoking the function, but rather referencing the function itself.
 
 console.log(newUser.greetings()) // Hello, James! + 'undefined'
-
 // The undefined at the end of the output is because the greetings function itself doesn't return any value explicitly. When a function in JavaScript doesn't have a return statement or it explicitly returns undefined, JavaScript returns undefined by default.
 
-// To avoid this 'undefined' we should return the (`Hello, ${this.name}!`) not console.log
+newUser.greetings() // Hello, James!
+
+// Other methods to avoid this 'undefined': we should return the (`Hello, ${this.name}!`) not console.log
 
 newUser.greetUser = function(){
     return (`Hello, ${this.name}!`)
