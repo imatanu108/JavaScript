@@ -70,3 +70,25 @@ const users = [
 console.log(users[0].email) // user1@gmail.com
 console.log(Object.keys(users[1])) // [ 'id', 'email' ] - returns an array of keys
 console.log(Object.values(users[1])) // [ 'user2', 'user2@gmail.com' ] - returns an array of values
+
+
+// Object De-Structuring
+
+const instaUser = {
+    username: "instaUser123",
+    email: "user@google.com",
+    realname: "Alex"
+}
+
+// Object de-structuring is an convenient way to extract properties from object and assign them to variables
+
+const {username, realname} = instaUser;
+console.log(realname) // Alex
+
+// JSON
+
+// {
+//     name: "UserName",
+//     userLocation: "USA",
+//     userEmail: "user@google.com"
+// }
