@@ -1,7 +1,7 @@
 const accountId = 87383
 let accountEmail = "xyz@google.com"
 var accountPassword = "12345"
-// accountCity = "Delhi" // though we can initialize a variable without using let, var, or const by we should not do that
+// accountCity = "Delhi" // though we can initialize a variable without using let, var, or const but we should not do that
 let accountName;
 
 // modefying the values
