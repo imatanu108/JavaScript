@@ -55,3 +55,32 @@ console.log(arrFunc()); // I'm an arrow function.
 // we can directly return a value in this way also...
 const arrFunc2 = () => ("I'm another arrow function.") // Explicit Return
 console.log(arrFunc2()); // I'm another arrow function.
+
+// IMMEDIATELY INVOKED FUNCTION EXPRESSION (IIFE)
+
+function basicFunc() {
+    console.log("DATA-BASE CONNECTED-1!");
+}
+// we invoke a function like this:
+basicFunc(); // Here 'instantFunc' is the function refference and () is the invocation
+// here ";" is very much important after basicFunc() - beacause inbetween two differnt code lines ();() there must be a semicolon
+// similarly we can immaediately invoke a function like this
+
+(function instantFunc(){
+    console.log("DATA-BASE CONNECTED-2!");
+})(); // DATA-BASE CONNECTED-2!
+// instantFunc() - !instantFunc is not defined in the global scope
+
+// short methods for iife
+(()=>{
+    console.log("DATA-BASE CONNECTED-3!");
+})(); // DATA-BASE CONNECTED-3!
+
+(function(){
+    console.log("DATA-BASE CONNECTED-4!");
+})(); // DATA-BASE CONNECTED-4!
+
+// iife with parameters
+((name) => {
+    console.log(`Hello, ${name}!`);
+})("Alex"); // Hello, Alex!
