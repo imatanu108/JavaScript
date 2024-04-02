@@ -48,7 +48,7 @@ const sumNum = (a,b) => {
 sumNum(3,8) // 11
 
 const arrFunc = () => {
-    return "I'm a arrow function." // Implicit Return
+    return "I'm an arrow function." // Implicit Return
 }
 console.log(arrFunc()); // I'm an arrow function.
 
