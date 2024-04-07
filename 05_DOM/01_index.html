@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Chile Nodes</title>
+</head>
+<body style="background-color: rgb(14, 26, 33); color: aliceblue;">
+    <!-- I'm a comment. -->
+    <div class="div-1">I am div-1.</div>
+    <div class="div-2">I am div-2.</div>
+    <ul class="list">
+        <li>Item-1</li>
+        <li>Item-2</li>
+        <li>Item-3</li>
+    </ul>
+    <script>
+        const list = document.body.children[2]
+        const listItems = list.children
+        const listItemsArray = Array.from(listItems)
+        listItemsArray.forEach((li) => {
+            li.style.backgroundColor = "darkgreen"
+            li.style.padding = "10px"
+            li.style.color = "white"
+            console.log("done");
+        })
+        console.log(document.body.firstElementChild);
+        console.log(document.body.firstChild);
+        console.log(document.body.childNodes[5]);
+        console.log(document.body.childNodes[5].nodeName);
+        console.log(document.body.childNodes[1].nodeName);
+    </script>
+</body>
+</html>

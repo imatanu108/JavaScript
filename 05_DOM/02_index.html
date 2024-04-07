@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manupulation</title>
+</head>
+<body style="background-color: rgb(19, 31, 36); color: aqua;">
+    <script>
+        // edit 1
+        const div1 = document.createElement("div")
+        div1.className = "div div-1"
+        div1.innerText = "Hello I am Div-1"
+        div1.style.color = "aliceblue"
+        div1.style.backgroundColor = "darkgreen"
+        document.body.append(div1)
+        
+        //edit 2
+        const div2 = document.createElement("div")
+        div2.className = "div div-2"
+        const textNode1 = document.createTextNode("Hello Im a text Node, and I don't know where Im going.")
+        div2.append(textNode1)
+        document.body.append(div2)
+
+        // edit 3
+        const div3 = document.createElement("div")
+        div3.className = "div div-3"
+        div3.innerHTML = "Hello I am <b> Div-3 </b>"
+        div3.style.color = "aliceblue"
+        div3.style.backgroundColor = "darkgreen"
+        document.body.append(div3)
+    </script>
+</body>
+</html>
