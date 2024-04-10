@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(20, 30, 40);
+            color: aliceblue;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background-color: rgb(216, 225, 233);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding: 10px 2px;
+            font-size: small;
+            color: rgb(16, 57, 74);
+            height: max(50vh);
+            width: max(38vh);
+            border-radius: 7px;
+            box-shadow: 1px 1px 10px rgb(27, 99, 112);
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            row-gap: 10px;
+            margin: 20px;
+        }
+
+        .card img {
+            margin-top: 5px;
+            height: max(30vh);
+            width: max(33vh);
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px rgba(27, 99, 112, 0.568);
+            object-fit: cover;
+        }
+
+        .bio {
+            font-size: 14px;
+            color: rgb(104, 105, 105);
+            font-family: cursive;
+            text-align: center;
+        }
+
+        .followers {
+            font-weight: bold;
+            color: rgb(123, 78, 10);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <div class="card">
+            <img src="" alt="">
+            <h2>Name</h2>
+            <div class="bio">This is bio</div>
+            <div class="followers">Followers: 20000</div>           
+        </div> -->
+    </div>
+    <script>  
+        
+        function creatCard(imgURL = "", name = "Alex", bio = "I build web apps.", followers = "1000") {
+            const newDiv = document.createElement("div")
+            newDiv.classList = "card"
+            newDiv.innerHTML = `<img src="${imgURL}" alt="">
+            <h2>${name}</h2>
+            <div class="bio">${bio}</div>
+            <div class="followers">Followers: ${followers}</div>`
+            const container = document.querySelector('.container')
+            container.append(newDiv);
+        }
+        // creatCard();
+
+        function getUserData(requestURL) {
+            const xhr = new XMLHttpRequest()
+            xhr.open('GET', requestURL, true) // async : true (other tasks will be keep on going on the backend)
+            xhr.onreadystatechange = function () {
+                console.log(xhr.readyState);
+                // if the request is complete readyState is 4 (XMLHttpRequest.DONE)
+                if (xhr.readyState === 4) {
+                    // if the response status is successful status code is 200
+                    if (xhr.status === 200) {
+                        console.log(this.responseText); // here the xhr.responseText is a string so we need tp convert it into JSON to perform any task
+                        const userData = JSON.parse(this.responseText);
+                        console.log(userData);
+                        // creating an card with these datas                      
+                        creatCard(userData.avatar_url, userData.name, userData.bio, userData.followers);
+                    } else {
+                        console.log('Error: ', xhr.status);
+                    }
+                }
+            }
+            xhr.send();
+        }
+
+        // This is the modefied version to create unlimited cards like this from any requested url
+        const requestURL1 = "https://api.github.com/users/hiteshchoudhary"
+        getUserData(requestURL1);
+
+        const requestURL2 = "https://api.github.com/users/imatanu108"
+        getUserData(requestURL2);
+
+    </script>
+</body>
+
+</html>
