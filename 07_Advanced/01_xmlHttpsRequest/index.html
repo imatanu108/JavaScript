@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Request</title>
+    <title>Github API Request</title>
     <style>
         * {
             margin: 0;
@@ -16,6 +16,41 @@
             color: aliceblue;
         }
 
+        .header {
+            margin-top: 20px;
+            font-size: xx-large;
+            font-family: 'Courier New', Courier, monospace;
+            color: rgb(168, 221, 239);
+            text-align: center;
+            font-weight: bold;
+        }
+        .intro {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        #input-field {
+            padding-left: 10px;
+            height: 30px;
+            width: 200px;
+            background-color: rgb(255, 245, 232);
+        }
+
+        #button {
+            height: 30px;
+            width: 100px;
+            background-color: rgb(168, 221, 239);
+        }
+
+        #button:hover {
+            background-color: rgb(43, 141, 174);
+            color: aliceblue;
+            cursor: pointer;
+        }
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -66,15 +101,19 @@
 </head>
 
 <body>
+    <div class="header">Enter the <span style="color: antiquewhite;">Github</span> username and see the magic.</div>
+    <div class="intro">
+        <input id="input-field" type="text" placeholder="Enter github username">
+        <button id="button">Submit</Details></button>
+    </div>
     <div class="container">
         <!-- <div class="card">
-            <img src="" alt="">
+            <img src="milkyway-galaxy.jpg" alt="">
             <h2>Name</h2>
             <div class="bio">This is bio</div>
             <div class="followers">Followers: 20000</div>           
         </div> -->
     </div>
- 
     <script src="script.js"></script>
 </body>
 

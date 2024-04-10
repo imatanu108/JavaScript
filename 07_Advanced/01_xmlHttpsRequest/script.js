@@ -1,6 +1,5 @@
 // creating an create card function to create cards
-
-function creatCard(imgURL = "", name = "Alex", bio = "I build web apps.", followers = "1000") {
+function creatCard(imgURL = "milkyway-galaxy.jpg", name = "Alex", bio = "I build web apps.", followers = "1000") {
     const newDiv = document.createElement("div")
     newDiv.classList = "card"
     newDiv.innerHTML = `<img src="${imgURL}" alt="">
@@ -38,5 +37,14 @@ function getUserData(requestURL) {
 const requestURL1 = "https://api.github.com/users/hiteshchoudhary"
 getUserData(requestURL1);
 
-const requestURL2 = "https://api.github.com/users/imatanu108"
-getUserData(requestURL2);
+const button = document.getElementById("button")
+button.addEventListener("click", () => {
+    // console.log("Button is clicked")
+    let userInput = document.getElementById("input-field")
+    let username = userInput.value
+    let requestURL = `https://api.github.com/users/${username}`
+    // console.log(requestURL);
+    // console.log(typeof requestURL);
+    getUserData(requestURL);
+    userInput.value = ''
+})
