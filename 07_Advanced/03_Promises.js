@@ -1,4 +1,4 @@
-// Promises
+// Promises, .then().catch(), async-await, fetch promises
 
 // Basic Structure of a Promise
 const myPromise = new Promise(function (resolve, reject) {
@@ -101,3 +101,29 @@ consumedPromiseFive();
 // { username: 'imatanu108', email: 'imatanu108@gmail.com' }
 // imatanu108
 // else - Error: Something went wrong.
+
+
+// Fetch Promises
+
+async function getUsers() {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/users") // fetch() takes time to get the data from the server
+        const data = await response.json() // here this task will also take time so we've used await here
+        console.log(data);
+    } catch (error) {
+        console.log("Error: ", error);
+    }
+}
+
+// getUsers();
+
+// doing the task with .then() and .catch()
+
+fetch("https://jsonplaceholder.typicode.com/users").then((response)=>{
+    // here fetch("-") directly returns the response
+    return response.json()
+}).then((data) => {
+    console.log(data)
+}).catch((error) => {
+    console.log(error)
+})
