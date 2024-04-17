@@ -39,7 +39,7 @@ const iPhone15 = new Item('iPhone 15', 99999)
 
 iPhone15.getPrice(); // The price of iPhone 15 is 99999 Rupees.
 iPhone15.increasePrice(1000);
-iPhone15.getPrice(); // The price of iPhone 15 is 99999 Rupees.
+iPhone15.getPrice(); // The price of iPhone 15 is 100999 Rupees.
 
 
 // Advanced Prototypes
