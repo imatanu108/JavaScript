@@ -39,7 +39,7 @@ const iPhone15 = new Item('iPhone 15', 99999)
 
 iPhone15.getPrice(); // The price of iPhone 15 is 99999 Rupees.
 iPhone15.increasePrice(1000);
-iPhone15.getPrice(); // The price of iPhone 15 is 99999 Rupees.
+iPhone15.getPrice(); // The price of iPhone 15 is 100999 Rupees.
 
 
 // Advanced Prototypes
@@ -103,7 +103,7 @@ const myObject2 = {
     __proto__: myObject1 // Sharing the properties and methods of myObject1 to myObject2, Now myObject2 can access all the properties and methods of myObject1
 }
 
-// we can also do this syntaxes also to set the prototype
+// we can also use these syntaxes to set the prototype
 myObject2.__proto__ = myObject1
 //Modern Syntax
 Object.setPrototypeOf(myObject2, myObject1)
