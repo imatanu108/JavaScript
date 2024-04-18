@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body style="background-color: rgb(8, 22, 42);">
+    <button>Click Me!</button>
+    <script>
+        class React {
+            constructor() {
+                this.library = "React"
+                this.server = "https://localhost:5500"
+
+                // Do somthing, After creating a new object of that class whenever we click on the button we get the server at consol
+
+                document.querySelector('button').addEventListener('click', this.handleClick.bind(this))
+            }
+            
+            handleClick() {
+                console.log("Button Clicked!");
+                console.log(this.server);
+            }
+        }
+        const app = new React();
+
+        // Button Clicked!
+        // https://localhost:5500
+
+    </script>
+</body>
+</html>
