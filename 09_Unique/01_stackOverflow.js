@@ -1,4 +1,4 @@
-// A stack overflow in JavaSCript Occurs when the call stack exceeds its maximum size due to too many function calls being added without being completed.
+// A stack overflow in JavaScript Occurs when the call stack exceeds its maximum size due to too many function calls being added without being completed.
 
 function infinitLoop() {
     infinitLoop();
