@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To-Do List</title>
+    <title>To-Do List Pro</title>
     <style>
       body {
         background-color: rgb(20, 30, 40);
@@ -13,6 +13,7 @@
         align-items: center;
         justify-content: center;
       }
+
       #head h1 {
         color: aqua;
       }
@@ -21,6 +22,7 @@
         font-size: 90%;
         margin: 10px 20px;
       }
+
       button {
         font-weight: bold;
         background-color: rgb(113, 218, 218);
@@ -30,6 +32,7 @@
         height: 25px;
         width: 90px;
       }
+
       #input-container {
         margin: 10px 2px;
       }
@@ -39,8 +42,8 @@
   <body>
     <div class="main">
       <div id="head">
-        <h1>To-Do List</h1>
-        <p>Wellcome to To-Do List! Add and manage your tasks here.</p>
+        <h1>To-Do List Pro</h1>
+        <p>Wellcome to To-Do List Pro! Add and manage your tasks here.</p>
       </div>
       <div id="container">
         <button id="add-cancel-btn">+Add Task</button>
@@ -50,9 +53,9 @@
         </div>
         <ol id="task-list" type="1">
           <li>
-            My First task<button id="remove-btn" onclick="removeTask(this)">
-              Remove
-            </button>
+            <span class="task-value"> My First task</span
+            ><button id="remove-btn" onclick="removeTask(this)">Remove</button
+            ><button id="update-btn" onclick="updateTask(this)">Update</button>
           </li>
         </ol>
       </div>
@@ -63,6 +66,7 @@
       let inputField = document.getElementById("input-field");
       let addCancelButton = document.getElementById("add-cancel-btn");
       let inputContainer = document.getElementById("input-container");
+      let updateButton = document.getElementById("update-btn");
 
       function toggleInputField() {
         // console.log("Button Toggled!");
@@ -75,15 +79,17 @@
           addCancelButton.innerText = "+Add Task";
         }
       }
-
       addCancelButton.addEventListener("click", toggleInputField);
 
       function addNewTask() {
-        let newTaskName = inputField.value;
-        let newTaskItem = document.createElement("li");
-        newTaskItem.innerHTML = `${newTaskName}<button id="remove-btn" onclick="removeTask(this)">Remove</button>`;
-        taskList.append(newTaskItem);
-        inputField.value = "";
+        let newTaskName = inputField.value.trim();
+        if (newTaskName !== "") {
+          let newTaskItem = document.createElement("li");
+          newTaskItem.innerHTML = `<span class="task-value">${newTaskName}</span><button id="remove-btn" onclick="removeTask(this)">Remove</button><button id="update-btn" onclick="updateTask(this)">Update</button>`;
+          taskList.append(newTaskItem);
+          inputField.value = "";
+          toggleInputField(); // reset the input-field 
+        }
       }
 
       addButton.addEventListener("click", addNewTask);
@@ -93,6 +99,26 @@
         let parentItem = button.parentElement;
         // console.log(parentItem)
         parentItem.remove();
+      }
+
+      function updateTask(button) {
+        inputContainer.style.display = "block";
+        let buttonParent = button.parentElement;
+        let taskName = button.parentElement.firstElementChild.innerText;
+        inputField.value = taskName;
+        inputField.focus();
+        addButton.innerText = "Update";
+        console.log(taskName);
+
+        addButton.addEventListener("click", () => {
+          let updatedTaskName = inputField.value.trim();
+          if (updatedTaskName !== "") {
+            button.parentElement.firstElementChild.innerText = updatedTaskName;
+          }
+          buttonParent.remove(); // remove the old task and adds the new modefied task
+          inputContainer.style.display = "none";
+          addButton.innerText = "Add";
+        });
       }
     </script>
   </body>
