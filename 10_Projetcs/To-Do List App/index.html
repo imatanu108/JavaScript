@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <style>
+      body {
+        background-color: rgb(20, 30, 40);
+        color: aliceblue;
+        font-family: cursive;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #head h1 {
+        color: aqua;
+      }
+
+      #container ol li button {
+        font-size: 90%;
+        margin: 10px 20px;
+      }
+      button {
+        font-weight: bold;
+        background-color: rgb(113, 218, 218);
+        color: rgb(8, 38, 53);
+        border-radius: 7px;
+        box-shadow: 1px 1px 5px rgba(15, 102, 105, 0.8);
+        height: 25px;
+        width: 90px;
+      }
+      #input-container {
+        margin: 10px 2px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main">
+      <div id="head">
+        <h1>To-Do List</h1>
+        <p>Wellcome to To-Do List! Add and manage your tasks here.</p>
+      </div>
+      <div id="container">
+        <button id="add-cancel-btn">+Add Task</button>
+        <div id="input-container" style="display: none">
+          <input id="input-field" type="text" placeholder="Enter the task" />
+          <button id="add-btn">Add</button>
+        </div>
+        <ol id="task-list" type="1">
+          <li>
+            My First task<button id="remove-btn" onclick="removeTask(this)">
+              Remove
+            </button>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <script>
+      let addButton = document.getElementById("add-btn");
+      let taskList = document.getElementById("task-list");
+      let inputField = document.getElementById("input-field");
+      let addCancelButton = document.getElementById("add-cancel-btn");
+      let inputContainer = document.getElementById("input-container");
+
+      function toggleInputField() {
+        // console.log("Button Toggled!");
+        if (inputContainer.style.display === "none") {
+          inputContainer.style.display = "block";
+          addCancelButton.innerText = "Cancel";
+          inputField.focus();
+        } else if (inputContainer.style.display !== "none") {
+          inputContainer.style.display = "none";
+          addCancelButton.innerText = "+Add Task";
+        }
+      }
+
+      addCancelButton.addEventListener("click", toggleInputField);
+
+      function addNewTask() {
+        let newTaskName = inputField.value;
+        let newTaskItem = document.createElement("li");
+        newTaskItem.innerHTML = `${newTaskName}<button id="remove-btn" onclick="removeTask(this)">Remove</button>`;
+        taskList.append(newTaskItem);
+        inputField.value = "";
+      }
+
+      addButton.addEventListener("click", addNewTask);
+
+      function removeTask(button) {
+        // console.log(button)
+        let parentItem = button.parentElement;
+        // console.log(parentItem)
+        parentItem.remove();
+      }
+    </script>
+  </body>
+</html>
