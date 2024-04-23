@@ -46,7 +46,7 @@ let anotherValue = multiplyTwoNums(6,7);
 console.log(anotherValue); // 42
 console.log(multiplyTwoNums(4,5)); // 20 
 console.log(multiplyTwoNums(4,"a")); // NaN
-console.log(multiplyTwoNums(5, multiplyTwoNums(4, multiplyTwoNums(5,3)))); // 300\
+console.log(multiplyTwoNums(5, multiplyTwoNums(4, multiplyTwoNums(5,3)))); // 300
 
 // whta if a user gives multiple numbers input, then we can handle it like this
 // Using Rest operator(...)

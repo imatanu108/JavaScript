@@ -94,6 +94,9 @@
           taskList.append(newTaskItem);
           inputField.value = "";
           toggleInputField(); // reset the input-field 
+        } else {
+          toggleInputField();
+          alert("Task name can't be empty!")
         }
       }
 
