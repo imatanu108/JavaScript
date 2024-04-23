@@ -12,7 +12,7 @@ const User = {
     "current level" : 45 // defining the data type seperately
 }
 
-console.log(User.email); // alex@google.com - this is not the write method to access. if we define the data type of the key seperately then this method will not work
+console.log(User.email); // alex@google.com - this is not the right method to access. if we define the data type of the key seperately then this method will not work
 console.log(User["email"]) // alex@google.com - better syntax for all type of datas of the key
 console.log(User["current level"]) // 45
 // console.log(User."current level") - syntax error
