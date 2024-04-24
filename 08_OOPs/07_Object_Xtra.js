@@ -18,7 +18,6 @@ console.log(descripter);
 descripter.configurable = true // this allow us to make changes to the property descriptor, that means we can modify enumerable, writable and configuravble properties
 descripter.writable = true // now we can change the value
 descripter.enumerable = true // now it can be iterable over loops like for-in, for-of
-configurable: false 
 
 console.log(descripter);
 // {
