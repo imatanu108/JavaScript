@@ -50,12 +50,6 @@ emp4.hireEmployee(89000); // Is Rahul ready to work at @ ₹89000/Month
 // accessing the constructer function
 console.log(emp4.constructor); // [Function: Employee]
 console.log(emp4.constructor());
-// another method
-console.log(emp3 instanceof Employee); // true
-console.log(emp1 instanceof Employee); // false - actually emp1 is not instance of Employee as we have not declared it using new keyword
-console.log(emp1.constructor); // [Function: Object] - just showing an Object
-
-
 // Employee {
 //     name: undefined,
 //     age: undefined,
@@ -63,6 +57,11 @@ console.log(emp1.constructor); // [Function: Object] - just showing an Object
 //     isWorking: undefined,
 //     hireEmployee: [Function (anonymous)]
 //   }
+// another method
+console.log(emp3 instanceof Employee); // true
+console.log(emp1 instanceof Employee); // false - actually emp1 is not instance of Employee as we have not declared it using new keyword
+console.log(emp1.constructor); // [Function: Object] - just showing an Object
+
 
 // The 'new' keyword
 // 1. whenever we use new keyword that creates an empty object {}
