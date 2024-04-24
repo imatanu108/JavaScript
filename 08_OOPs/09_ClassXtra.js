@@ -42,6 +42,9 @@ class WildAnimals {
 }
 class Tiger extends WildAnimals {
     makeSound() {
-        return `Roar!!!1` // this is called methods overriding
+        return `Roar!!!` // this is called methods overriding
     }
 }
+
+const tigerChild = new Tiger
+console.log(tigerChild.makeSound()) // Roar!!!
