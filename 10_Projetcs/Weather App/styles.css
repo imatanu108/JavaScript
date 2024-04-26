@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background-color: #3977b6;
+    color: white;
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 85%;
+    margin: 5px 20px;
+}
+
+#header {
+    margin: 5px 0px;
+}
+
+#search {
+    margin: 5px 0px;
+}
+
+#location-region-container {
+    margin: 10px 0px;
+}
+#region, #last-updated, #daytime {
+    font-weight: 400;
+    color: #cae7eeda;
+    font-size: 90%;
+}
+#search-btn, #refresh-btn {
+    font-family: Poppins;
+    height: 22px;
+    width: 95px;
+    background-color: #a6e0e0;
+    color: rgba(4, 46, 66, 0.847);
+    border-radius: 10px;
+    font-size: 80%;
+    font-weight: 600;
+    border: solid 2px #0e3652;
+}
+#input-location {
+    margin-right: 5px;
+    background-color: #d8e4ef;
+    height: 17px;
+    font-family: Poppins;
+    font-size: 80%;
+    border-radius: 10px;
+    padding-left: 5px;
+    border: solid 2px #0e3652;
+}
+
+#search-btn:hover, #refresh-btn:hover {
+    cursor: pointer;
+    background-color: #365583;
+    color: white;
+    font-weight: 500;
+
+}
+
+#info-section {
+    margin-top: 15px;
+}
+#info-section div {
+    margin: 1px 0px;
+}
+
+#container > *{
+    margin: 2px 0px;
+}
+#location {
+    font-size: 115%;
+}
+#sky-condition {
+    font-size: 115%;
+    display: flex;
+    align-items: center;
+}
+#temperature-c {
+    font-size: 190%;
+    font-weight: 600;
+}
+#uv-level {
+    margin-left: 5px;
+    color: #cae7eeda;
+    font-size: 90%;
+}
+
+.hour-forecast {
+    font-size: 90%;
+    border: solid 2px rgb(142, 204, 208);
+    border-radius: 10px;
+    height: 140;
+    width: 90px;
+    padding: 10px;
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hourly-temperature {
+    font-size: 120%;
+    font-weight: 500;
+}
+.hourly-icon img {
+    height: 50px;
+}
+
+#day-forecast {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
