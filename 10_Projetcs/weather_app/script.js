@@ -38,6 +38,7 @@ function updateWeather(location, temperature, condition, feelsLike, wind, humidi
 
     if (isDay) {
         document.body.style.backgroundColor = "#3977b6"
+        document.body.style.backgroundImage = "linear-gradient(#3e82c5, #104278)"
         title.innerHTML = 'Weather Updates 🌤️'
     } else {
         document.body.style.backgroundColor = "#091625"
