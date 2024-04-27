@@ -9,42 +9,62 @@
 </head>
 
 <body>
-    <div id="head-section">
-        <div id="header">
-            <h1 id="page-title">Weather Updates 🌥️</h1>
-            <p>Enter your location to get the weather Update.</p>
-        </div>
-        <div id="search">
-            <input id="input-location" type="text" placeholder="Enter your location" />
-            <button id="search-btn">Get Updates</button>
-            <button id="refresh-btn">Refresh</button>
-        </div>
-    </div>
+    <div class="main">
 
-    <div id="info-section">
-        <div id="location-region-container">
-            <span id="location">Kolkata</span>
-            <span id="region">West Bengal, India</span>
-        </div>
-        <div id="container">
-            <div>
-                <span id="temperature-c">30 °C</span>
-                <span id="daytime">Noon</span>
+        <div id="head-section">
+            <div id="header">
+                <h1 id="page-title">Weather Updates 🌥️</h1>
+                <p>Enter your location to get the weather Update.</p>
             </div>
-            <div id="sky-condition">
-                <img id="icon-img" src="//cdn.weatherapi.com/weather/64x64/day/143.png" /><span>Mostly Cloudy</span>
+            <div id="search">
+                <input id="input-location" type="text" placeholder="Enter your location" />
+                <button id="search-btn">Get Updates</button>
+                <button id="refresh-btn">Refresh</button>
             </div>
-            <p>Feels like 30 °C</p>
-            <p>UV Index: 2<span id="uv-level">Low</span></p>
-            <p>Wind Speed: 12kph</p>
-            <p>Humidity: 45%</p>
-            <p id="last-updated">Last Updated at 2024-01-01 12:00</p>
         </div>
-    </div>
-    <div class="forecast">
-        <h4>Hourly Forecast</h3>
-        <div id="day-forecast">
-            <!-- <div class="hour-forecast">
+
+        <div id="info-section">
+            <div class="primary-info">
+                <div id="location-region-container">
+                    <span id="location">Kolkata</span>
+                    <span id="region">West Bengal, India</span>
+                </div>
+                <div id="container">
+                    <div>
+                        <span id="temperature-c">30 °C</span>
+                        <span id="daytime">Noon</span>
+                    </div>
+                    <div id="sky-condition">
+                        <img id="icon-img" src="//cdn.weatherapi.com/weather/64x64/day/143.png" /><span>Mostly
+                            Cloudy</span>
+                    </div>
+                    <p>Feels like 30 °C</p>
+                    <p>UV Index: 2<span id="uv-level">Low</span></p>
+                    <div>Max Temperature: 44 °C</div>
+                    <div>Min Temperature: 22 °C</div>
+                    <p>Wind Speed: 12 kph</p>
+                    <p>Humidity: 45%</p>
+                    <p id="last-updated">Last Updated at 2024-01-01 12:00</p>
+                </div>
+            </div>
+            <div id="secondary-info">
+                <div id="sky-condition">
+                    <img id="icon-img" src="//cdn.weatherapi.com/weather/64x64/day/143.png" /><span>Mostly
+                        Cloudy</span>
+                </div>
+                <div>Sunrise: 05:07 am</div>
+                <div>Sunset: 06:17 pm</div>
+                <div>Clouds: 25%</div>
+                <div>Chance of Rain: 22%</div>
+                <div>Chance of Snow: 22%</div>
+                <div>Max Wind Speed: 22 kph</div>
+            </div>
+        </div>
+
+        <div class="forecast">
+            <h4>Hourly Forecast -></h4>
+            <div id="day-forecast">
+                <!-- <div class="hour-forecast">
                 <div class="hourly-temperature">30 °C</div>
                 <div class="hourly-icon">
                     <img src="//cdn.weatherapi.com/weather/64x64/day/143.png">
@@ -53,8 +73,11 @@
                 <div class="hourly-rain">Rain - 40%</div>
                 <div class="hourly-time">12:00</div>
             </div> -->
+            </div>
         </div>
+
     </div>
+    <div class="copyright">&copy; Made with love by the mercy of Gour-Nitai & Radha-Madhav</div>
     <script src="script.js"></script>
 </body>
 

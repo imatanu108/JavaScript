@@ -1,13 +1,13 @@
-
 const searchButton = document.getElementById("search-btn")
 const input = document.getElementById("input-location")
 const refreshButton = document.getElementById("refresh-btn")
 const locationContainer = document.getElementById("location")
 const regionContainer = document.getElementById("region")
 const detailsContainer = document.getElementById("container")
+const secondaryInfoContainer = document.getElementById("secondary-info")
 const title = document.getElementById("page-title")
 
-function updateWeather(location, temperature, condition, feelsLike, wind, humidity, uvIndex, region, country, lastUpdated, dayTime, isDay, uvLevel, iconUrl) {
+function updateWeather(location, temperature, condition, feelsLike, wind, humidity, uvIndex, region, country, lastUpdated, dayTime, isDay, uvLevel, iconUrl, sunrise, sunset, maxTemperatureC, minTemperatureC, chanceOfRain, chanceOfSnow, clouds, maxWind) {
 
     locationContainer.innerHTML = `${location}`
 
@@ -18,12 +18,23 @@ function updateWeather(location, temperature, condition, feelsLike, wind, humidi
         <span id="temperature-c">${temperature} °C</span>
         <span id="daytime">${dayTime}</span>
     </div>
-    <div id="sky-condition"><img id="icon-img" src="${iconUrl}"><span>${condition}</span></div>
     <p>Feels like ${feelsLike} °C</p>
     <p>UV Index: ${uvIndex}<span id="uv-level">${uvLevel}</span></p>
-    <p>Wind Speed: ${wind}kph</p>
+    <div>Max Temperature: ${maxTemperatureC} °C</div>
+    <div>Min Temperature: ${minTemperatureC} °C</div>
+    <p>Wind Speed: ${wind} kph</p>
     <p>Humidity: ${humidity}%</p>
     <p id="last-updated">Last Updated at ${lastUpdated}</p>`
+
+    secondaryInfoContainer.innerHTML = `
+    <div id="sky-condition"><img id="icon-img" src="${iconUrl}"><span>${condition}</span></div>
+    <div>Sunrise: ${sunrise}</div>
+    <div>Sunset: ${sunset}</div>
+    <div>Clouds: ${clouds}%</div>
+    <div>Chance of Rain: ${chanceOfRain}%</div>
+    <div>Chance of Snow: ${chanceOfSnow}%</div>
+    <div>Max Wind Speed: ${maxWind}2 kph</div>
+    `
 
     if (isDay) {
         document.body.style.backgroundColor = "#3977b6"
@@ -58,6 +69,17 @@ function fetchThenUpdate (requestURL) {
             let lastUpdated = data.current.last_updated
             let isDay = data.current.is_day
             let iconUrl = data.current.condition.icon
+
+            // secondary updates
+
+            let sunrise = data.forecast.forecastday[0].astro.sunrise
+            let sunset = data.forecast.forecastday[0].astro.sunset
+            let maxTemperatureC = data.forecast.forecastday[0].day.maxtemp_c
+            let minTemperatureC = data.forecast.forecastday[0].day.mintemp_c
+            let chanceOfRain = data.forecast.forecastday[0].day.daily_chance_of_rain
+            let chanceOfSnow = data.forecast.forecastday[0].day.daily_chance_of_snow
+            let clouds = data.current.cloud
+            let maxWind = data.forecast.forecastday[0].day.maxwind_kph
 
             // last upadetd time format : "2024-04-26 10:45"
 
@@ -122,9 +144,9 @@ function fetchThenUpdate (requestURL) {
                 default:
                     break;
             }
-            updateWeather(location, temperature, condition, feelsLike, wind, humidity, uvIndex, region, country, lastUpdated, dayTime, isDay, uvLevel, iconUrl);
+            updateWeather(location, temperature, condition, feelsLike, wind, humidity, uvIndex, region, country, lastUpdated, dayTime, isDay, uvLevel, iconUrl, sunrise, sunset, maxTemperatureC, minTemperatureC, chanceOfRain, chanceOfSnow, clouds, maxWind);
 
-            // Daily Forcast
+            // Daily Hourly Forcast Details
             
             let dayForcastElement = document.getElementById("day-forecast")
             dayForcastElement.innerHTML = ''
@@ -191,5 +213,3 @@ function refreshWeather() {
 }
 
 refreshButton.addEventListener('click', refreshWeather);
-
-

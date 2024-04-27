@@ -11,8 +11,14 @@ body {
 
 #header {
     margin: 5px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+#header h1 {
+    font-weight: 700;
+}
 #search {
     margin: 5px 0px;
 }
@@ -56,7 +62,14 @@ body {
 }
 
 #info-section {
+    border: solid 2px rgb(142, 204, 208);
+    border-radius: 10px;
+    padding: 15px;
     margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    flex-wrap: wrap;
 }
 #info-section div {
     margin: 1px 0px;
@@ -87,9 +100,9 @@ body {
     font-size: 90%;
     border: solid 2px rgb(142, 204, 208);
     border-radius: 10px;
-    height: 140;
-    width: 90px;
-    padding: 10px;
+    height: 140px;
+    width: 120px;
+    padding: 5px;
     margin: 10px 10px;
     display: flex;
     flex-direction: column;
@@ -104,8 +117,28 @@ body {
     height: 50px;
 }
 
+
 #day-forecast {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.forecast h4 {
+    font-weight: 500;
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.copyright {
+    text-align: center;
+    margin: 20px;
+    font-weight: 500;
+    color: #9abeda;
 }
