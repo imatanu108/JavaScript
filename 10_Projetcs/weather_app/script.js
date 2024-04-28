@@ -38,10 +38,11 @@ function updateWeather(location, temperature, condition, feelsLike, wind, humidi
 
     if (isDay) {
         document.body.style.backgroundColor = "#3977b6"
-        document.body.style.backgroundImage = "linear-gradient(#3e82c5, #104278)"
+        // document.body.style.backgroundImage = "linear-gradient(#3e82c5, #104278)"
         title.innerHTML = 'Weather Updates 🌤️'
     } else {
         document.body.style.backgroundColor = "#091625"
+        // document.body.style.backgroundImage = "linear-gradient(#0f253e, #091625)"
         document.body.style.color = "#d8e4ef"
         title.innerHTML = 'Weather Updates 🌙'
     }
@@ -95,25 +96,55 @@ function fetchThenUpdate (requestURL) {
             let dayTime = ""
 
             if (timeINT >= 0 && timeINT <= 100) {
+
                 dayTime = "Mid Night"
+                document.body.style.backgroundImage = "linear-gradient(#0f253e, #091625)"
+
             } else if (timeINT >= 101 && timeINT <= 330) {
+
                 dayTime = "Late Night"
+                document.body.style.backgroundImage = "linear-gradient(#0f253e, #091625)"
+
             } else if (timeINT >= 331 && timeINT <= 500) {
+
                 dayTime = "Dawn"
+                document.body.style.backgroundImage = "linear-gradient(#0b5761, #093360, #091625)"
+
             } else if (timeINT >= 501 && timeINT <= 659) {
+
                 dayTime = "Early Morning"
+                document.body.style.backgroundImage = "linear-gradient(#3e82c5, #104278)"
+
             } else if (timeINT >= 700 && timeINT <= 1100) {
+
                 dayTime = "Morning"
+                document.body.style.backgroundImage = "linear-gradient(#3e82c5, #104278)"
+                
             } else if (timeINT >= 1101 && timeINT <= 1459) {
+
                 dayTime = "Noon"
+                document.body.style.backgroundImage = "linear-gradient(#3e82c5, #104278)"
+
             } else if (timeINT >= 1500 && timeINT <= 1700) {
+
                 dayTime = "Afternoon"
+                document.body.style.backgroundImage = "linear-gradient(#3e82c5, #104278)"
+
             } else if (timeINT >= 1701 && timeINT <= 1759) {
+
                 dayTime = "Dusk"
+                document.body.style.backgroundImage = "linear-gradient(#510436, #7f2b14, #072f54)"
+
             } else if (timeINT >= 1800 && timeINT <= 2059) {
+
                 dayTime = "Evening"
+                document.body.style.backgroundImage = "linear-gradient(#0f253e, #091625)"
+
             } else if (timeINT >= 2100 && timeINT <= 2359) {
+
                 dayTime = "Night"
+                document.body.style.backgroundImage = "linear-gradient(#0f253e, #091625)"
+
             }
 
             // Calculating UV index level (low, medium or high)
@@ -145,6 +176,7 @@ function fetchThenUpdate (requestURL) {
                 default:
                     break;
             }
+            
             updateWeather(location, temperature, condition, feelsLike, wind, humidity, uvIndex, region, country, lastUpdated, dayTime, isDay, uvLevel, iconUrl, sunrise, sunset, maxTemperatureC, minTemperatureC, chanceOfRain, chanceOfSnow, clouds, maxWind);
 
             // Daily Hourly Forcast Details
