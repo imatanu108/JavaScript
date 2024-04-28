@@ -1,0 +1,54 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(#0c8381, #0a590a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-container {
+    background-color: rgb(10, 37, 48);
+    padding: 10px;
+    color: aliceblue;
+    font-size: large;
+    height: 550px;
+    width: 400px;
+    /* border-radius: 15px; */
+    box-shadow: 0px 0px 20px rgb(88, 159, 162);
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows:  1.2fr 1fr 1fr 1fr 1fr 1fr;
+}
+#display-box {
+    color: rgb(194, 203, 211);
+    font-size: 54px;
+    background-color: rgb(16, 44, 55);
+    grid-column: 1 / 5;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+#equal-btn {
+    grid-column: 3 / 5;
+}
+
+.btn {
+    font-size: xx-large;
+    background-color: rgb(3, 74, 92);
+    /* border: solid 2px cyan; */
+    box-shadow: inset 1px 1px 3px rgb(27, 150, 203);
+    color: white;
+}
+
+.spl-btn-1 {
+    background-color: rgb(14, 60, 150);
+}
+.spl-btn-2 {
+    background-color: rgb(7, 99, 129);
+}
