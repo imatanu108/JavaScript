@@ -27,13 +27,13 @@ function updateWeather(location, temperature, condition, feelsLike, wind, humidi
     <p id="last-updated">Last Updated at ${lastUpdated}</p>`
 
     secondaryInfoContainer.innerHTML = `
-    <div id="sky-condition"><img id="icon-img" src="${iconUrl}"><span>${condition}</span></div>
+    <div id="sky-condition"><img id="icon-img" src="https:${iconUrl}"><span>${condition}</span></div>
     <div>Sunrise: ${sunrise}</div>
     <div>Sunset: ${sunset}</div>
     <div>Clouds: ${clouds}%</div>
     <div>Chance of Rain: ${chanceOfRain}%</div>
     <div>Chance of Snow: ${chanceOfSnow}%</div>
-    <div>Max Wind Speed: ${maxWind}2 kph</div>
+    <div>Max Wind Speed: ${maxWind} kph</div>
     `
 
     if (isDay) {
@@ -170,7 +170,7 @@ function fetchThenUpdate (requestURL) {
                 newElem.innerHTML = `
                 <div class="hourly-temperature">${hourly_temp}°C</div>
                 <div class="hourly-icon">
-                    <img src="${hourly_icon}">
+                    <img src="https:${hourly_icon}">
                 </div>
                 <div class="hourly-condition">${hourly_condition}</div>
                 <div class="hourly-rain">Rain - ${hourly_rain}%</div>
