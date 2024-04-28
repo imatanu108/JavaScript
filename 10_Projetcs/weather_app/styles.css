@@ -22,6 +22,12 @@ body {
 
 #search {
     margin: 5px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #location-region-container {
@@ -35,7 +41,7 @@ body {
 }
 
 #search-btn, #refresh-btn {
-    margin: 10px 2px;
+    /* margin: 5px; */
     font-family: Poppins;
     height: 22px;
     width: 95px;
@@ -48,7 +54,7 @@ body {
 }
 
 #input-location {
-    margin-right: 5px;
+    /* margin-right: 5px; */
     background-color: #d8e4ef;
     height: 17px;
     width: 200px;
