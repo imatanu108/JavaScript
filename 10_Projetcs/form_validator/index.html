@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Form Validator</h1>
+        <form action="#" id="my-form">
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your full name" >
+                <span class="error-message" id="name-error">Name is required!</span>
+            </div>
+
+            <div class="input-group">
+                <label for="mobile-number">Mobile Number:</label>
+                <input type="tel" id="mobile-number" placeholder="Enter your mobile number" >
+                <span class="error-message" id="mobile-number-error">Mobile number is required!</span>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" >
+                <span class="error-message" id="email-error">Email is required!</span>
+            </div>
+
+            <div class="input-group">
+                <label for="message">Message:</label>
+                <textarea id="message" placeholder="Your message" rows="7"></textarea>
+                <span class="error-message" id="message-error">Message is required!</span>
+            </div>
+
+            <input type="submit" id="submit-btn">
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
