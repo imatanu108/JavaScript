@@ -58,7 +58,9 @@ function fetchThenUpdate (requestURL) {
           return response.json();
         }).then( data => {
             console.log(data);
-            // some values extracted from data
+
+            // Primary Updates
+
             let location = data.location.name
             let temperature = data.current.temp_c
             let condition = data.current.condition.text
@@ -72,7 +74,7 @@ function fetchThenUpdate (requestURL) {
             let isDay = data.current.is_day
             let iconUrl = data.current.condition.icon
 
-            // secondary updates
+            // Secondary updates
 
             let sunrise = data.forecast.forecastday[0].astro.sunrise
             let sunset = data.forecast.forecastday[0].astro.sunset
@@ -185,6 +187,7 @@ function fetchThenUpdate (requestURL) {
             dayForcastElement.innerHTML = ''
 
             for ( let i = 0; i <= 23; i++ ) {
+                
                 let hourlyData = data.forecast.forecastday[0].hour[i]
 
                 // console.log(hourlyData);
