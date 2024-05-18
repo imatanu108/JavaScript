@@ -22,7 +22,10 @@ function addNewTask() {
     let newTaskName = inputField.value.trim();
     if (newTaskName !== "") {
         let newTaskItem = document.createElement("li");
-        newTaskItem.innerHTML = `<span class="task-value">${newTaskName}</span><button id="remove-btn" onclick="removeTask(this)">Remove</button><button id="update-btn" onclick="updateTask(this)">Update</button>`;
+        newTaskItem.innerHTML = 
+        `<span class="task-value">${newTaskName}</span>
+        <button class="remove-btn" onclick="removeTask(this)">Remove</button>
+        <button class="update-btn" onclick="updateTask(this)">Update</button>`;
         taskList.append(newTaskItem);
         inputField.value = "";
         toggleInputField(); // reset the input-field 

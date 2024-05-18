@@ -26,7 +26,7 @@ button {
     width: 90px;
 }
 
-#update-btn {
+.update-btn {
     background-color: rgb(254, 220, 184);
 }
 
