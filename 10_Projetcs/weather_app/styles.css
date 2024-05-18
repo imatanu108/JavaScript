@@ -117,8 +117,8 @@ body {
     font-size: 90%;
     border: solid 2px rgb(142, 204, 208);
     border-radius: 10px;
-    height: 140px;
-    width: 120px;
+    /* height: 140px;
+    width: 120px; */
     padding: 5px;
     margin: 10px 10px;
     display: flex;
