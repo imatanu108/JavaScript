@@ -221,7 +221,7 @@ function fetchThenUpdate (requestURL) {
 
 }
 
-let apiKey = "83afff66018341d98f444727242504"
+let apiKey = ''// your weatherapi key
 let baseLocation = "Kolkata".split(" ").join("%20")
 const baseRequestURL = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${baseLocation}`
 

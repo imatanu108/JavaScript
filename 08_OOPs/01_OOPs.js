@@ -11,6 +11,7 @@ const employee = {
         console.log(this); // the this keyword actually reffers to thge currebt context
     }
 }
+
 // console.log(employee.email);
 // employee.getUserData()
 // console.log(this); // {}
