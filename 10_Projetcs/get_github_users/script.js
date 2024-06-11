@@ -35,8 +35,8 @@ function getUserData(requestURL) {
 
 // This is the modefied version to create unlimited cards like this from any requested url
 
-// const requestURL1 = "https://api.github.com/users/hiteshchoudhary"
-// getUserData(requestURL1);
+const requestURL1 = "https://api.github.com/users/hiteshchoudhary"
+getUserData(requestURL1);
 
 const button = document.getElementById("button")
 button.addEventListener("click", () => {

@@ -7,7 +7,9 @@ const detailsContainer = document.getElementById("container")
 const secondaryInfoContainer = document.getElementById("secondary-info")
 const title = document.getElementById("page-title")
 
-function updateWeather(location, temperature, condition, feelsLike, wind, humidity, uvIndex, region, country, lastUpdated, dayTime, isDay, uvLevel, iconUrl, sunrise, sunset, maxTemperatureC, minTemperatureC, chanceOfRain, chanceOfSnow, clouds, maxWind) {
+function updateWeather (
+    location, temperature, condition, feelsLike, wind, humidity, uvIndex, region, country, lastUpdated, dayTime, isDay, uvLevel, iconUrl, sunrise, sunset, maxTemperatureC, minTemperatureC, chanceOfRain, chanceOfSnow, clouds, maxWind
+) {
 
     locationContainer.innerHTML = `${location}`
 
