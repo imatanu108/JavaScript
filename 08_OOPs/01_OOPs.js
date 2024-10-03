@@ -8,7 +8,7 @@ const employee = {
     getUserData: function(){
         console.log("Got the user details from the server.");
         console.log(`Name: ${this.name}`);
-        console.log(this); // the this keyword actually reffers to thge currebt context
+        console.log(this); // the this keyword actually reffers to the current context
     }
 }
 
