@@ -68,5 +68,5 @@ myPromise2Handler() // invoking the async function to handle the promise
 // both rejected
 // Promise 1 rejected with value 0.21202458186323203
 // Promise 2 rejected with value 0.2996170435850407
-// Error in handling Promise 2
+// Error in handling Promise 2 -- errors goes to stack, so its follow LIFO, last in first out
 // Error in handling Promise 1

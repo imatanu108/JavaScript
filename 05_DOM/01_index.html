@@ -16,8 +16,12 @@
     </ul>
     <script>
         const list = document.body.children[2]
+        console.log("----",document.body.children)
+        console.log("----",list)
         const listItems = list.children
         const listItemsArray = Array.from(listItems)
+        console.log("----",listItems)
+        console.log("----",listItemsArray)
         listItemsArray.forEach((li) => {
             li.style.backgroundColor = "darkgreen"
             li.style.padding = "10px"

@@ -18,3 +18,16 @@ console.log(typeof boolIsLoggedIn) // boolean
 
 isLoggedIn = 1556 // "Name"
 console.log(boolIsLoggedIn) // true
+
+console.log("5" - 1); // 4 (string "5" is coerced to number)
+console.log("5" + 1); // "51" (number 1 is coerced to string)
+console.log(true + 1); // 2 (true coerced to 1)
+console.log(null + 1); // 1 (null coerced to 0)
+console.log(undefined + 1); // NaN (undefined cannot be coerced to a number)
+console.log(0 == ""); // true (coercion happens)
+console.log(0 === ""); // false (strict comparison, no coercion)
+console.log(1 / 0); // Infinity
+console.log(-1 / 0); // -Infinity
+console.log(0 / 0); // NaN
+console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
+console.log(Number.MIN_SAFE_INTEGER); // -9007199254740991

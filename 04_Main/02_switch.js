@@ -1,4 +1,3 @@
-
 // Switch case in JavaScript
 
 const dayIndex = 4

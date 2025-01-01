@@ -26,5 +26,5 @@ const shoppingCart = [
     {itemName: "Indian Jersy", price: 1299}
 ]
 
-let totalPrice = shoppingCart.reduce((value, currentValue) => {return value +  currentValue.price}, 0);
+let totalPrice = shoppingCart.reduce((value, currentValue) => (value +  currentValue.price), 0);
 console.log(totalPrice); // 6395

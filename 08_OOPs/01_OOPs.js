@@ -30,27 +30,27 @@ function Employee (name, age, email, isWorking) {
 
     return this;
 }
-// console.log(Employee())
+console.log(Employee())
 
 //Creating instances from the constructor function without using 'new' keyword
 const emp1 = Employee("Sam", 27, "sam@microsoft.com", true);
-console.log(emp1.email); // sam@microsoft.com
+// console.log(emp1.email); // sam@microsoft.com
 
 const emp2 = Employee("Rohit", 28, "rohit@google.com", false);
-console.log(emp2.email); // rohit@google.com 
-console.log(emp1.email); // rohit@google.com - this is happening because we are not using new keyword for creating instances so its acutally modefying the orginial constructer object
+// console.log(emp2.email); // rohit@google.com 
+// console.log(emp1.email); // rohit@google.com - this is happening because we are not using new keyword for creating instances so its acutally modefying the orginial constructer object
 
 const emp3 = new Employee("Hitesh", 29, "hitesh@google.com", true);
-console.log(emp3.email); // hitesh@google.com
+// console.log(emp3.email); // hitesh@google.com
 const emp4 = new Employee("Rahul", 26, "rahul@microsoft.com", true);
-console.log(emp4.email); // rahul@microsoft.com
-console.log(emp3.email); // hitesh@google.com
+// console.log(emp4.email); // rahul@microsoft.com
+// console.log(emp3.email); // hitesh@google.com
 
-emp4.hireEmployee(89000); // Is Rahul ready to work at @ ₹89000/Month
+// emp4.hireEmployee(89000); // Is Rahul ready to work at @ ₹89000/Month
 
 // accessing the constructer function
-console.log(emp4.constructor); // [Function: Employee]
-console.log(emp4.constructor());
+// console.log(emp4.constructor); // [Function: Employee]
+// console.log(emp4.constructor());
 
 // Employee {
 //     name: undefined,
@@ -61,9 +61,9 @@ console.log(emp4.constructor());
 //   }
 
 // another method
-console.log(emp3 instanceof Employee); // true
-console.log(emp1 instanceof Employee); // false - actually emp1 is not instance of Employee as we have not declared it using new keyword
-console.log(emp1.constructor); // [Function: Object] - just showing an Object
+// console.log(emp3 instanceof Employee); // true
+// console.log(emp1 instanceof Employee); // false - actually emp1 is not instance of Employee as we have not declared it using new keyword
+// console.log(emp1.constructor); // [Function: Object] - just showing an Object
 
 
 // The 'new' keyword
